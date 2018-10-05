@@ -33,42 +33,165 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="./bootstrap.css">
+        <link rel="icon" type="image/png" href="../form/images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/fonts/iconic/css/material-design-iconic-font.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/vendor/animate/animate.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/vendor/animsition/css/animsition.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/vendor/daterangepicker/daterangepicker.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/vendor/noui/nouislider.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../form/css/util.css">
+            <link rel="stylesheet" type="text/css" href="../form/css/main.css">
 
     </head>
     <body>
         <div class="container-fluid">
-        
-        <div align="center">
-            <div class="py-4">
-                <img height="100px;" width="auto" src="./technologymakerLogo.png" alt="TM"><span style="font-size: 50px;letter-spacing: 1.5px; font-family: 'Lato', sans-serif;"> <span style="letter-spacing: 1.5px;" class="text-danger">T</span>echnology<span style="letter-spacing: 1.5px;" class="text-danger">M</span>aker</span>
-            </div>
-            <span id="spin_button"></span>
-            <div class="mt-5">
-                <table cellpadding="0" cellspacing="0" border="0">
-                <td width="438px" height="582px" class="the_wheel" onClick="startSpin()" align="center" valign="center">
-                    <canvas id="canvas" width="434px" height="434px">
-                        <p style="color: white" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-                    </canvas>
-                </td>
-            </table>
-            </div>
-            <div style=" padding-left: 30%;">
-                <p style="text-align: left"> <strong style="font-size: 20px;">Terms and Condition:</strong><br><br>1. The following amount shall be redeemed to you. <br>
-                2. After the completion of 3 projects. <br>
-                3. The amount shall be credited to you with your respective pay for 3 projects. <br><br></p>
-            </div>
-            <div>
-                <span class="text-uppercase pb-5 font-weight-bold text-danger blink" style="font-size: 30px;">All the best!!</span> 
-            </div>
-                 
-            <div id="myModal" class="modal px-5" >
-                    <!-- Modal content -->
-                    <div class="modal-content py-5">
-                      <span style="font-size: 30px;"> <span id="d"></span><span style="font-size: 50px;" class="close">&times;</span></span>
+                <div class="py-4" align="center">
+                        <img height="100px;" width="auto" src="./technologymakerLogo.png" alt="TM"><span style="font-size: 50px;letter-spacing: 1.5px; font-family: 'Lato', sans-serif;"> <span style="letter-spacing: 1.5px;" class="text-danger">T</span>echnology<span style="letter-spacing: 1.5px;" class="text-danger">M</span>aker</span>
                     </div>
-                </div>
-           
+        <div class="row">
+                <div align="center" class="col-md-6">
+                        <span id="spin_button"></span>
+                        <div class="mt-5">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                            <td width="438px" height="582px" class="the_wheel" onClick="startSpin()" align="center" valign="center">
+                                <canvas id="canvas" width="434px" height="434px">
+                                    <p style="color: white" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                                </canvas>
+                            </td>
+                        </table>
+                        </div>
+                        <div style=" padding-left: 15%;">
+                            <p style="text-align: left"> <strong style="font-size: 20px;">Terms and Condition:</strong><br><br>1. The following amount shall be redeemed to you. <br>
+                            2. After the completion of 3 projects. <br>
+                            3. The amount shall be credited to you with your respective pay for 3 projects. <br><br></p>
+                        </div>
+                        <div>
+                            <span class="text-uppercase pb-5 font-weight-bold text-danger blink" style="font-size: 30px;">All the best!!</span> 
+                        </div>
+                             
+                        <div id="myModal" class="modal px-5" >
+                                <!-- Modal content -->
+                                <div class="modal-content py-5">
+                                  <span style="font-size: 30px;"> <span id="d"></span><span style="font-size: 50px;" class="close">&times;</span></span>
+                                </div>
+                            </div>
+                       
+                    </div>
+                    <div class="col-md-6 mt-5">
+                            <div class="container-contact100">
+                                    <div class="wrap-contact100">
+                                        <form class="contact100-form validate-form">
+                                            <span class="contact100-form-title">
+                                                Details
+                                            </span>
+                            
+                                            <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                                                <span class="label-input100">FULL NAME *</span>
+                                                <input class="input100" type="text" name="name" placeholder="Enter Your Name">
+                                            </div>
+                            
+                                            <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+                                                <span class="label-input100">Email *</span>
+                                                <input class="input100" type="text" name="email" placeholder="Enter Your Email ">
+                                            </div>
+                            
+                                            <div class="wrap-input100 bg1 rs1-wrap-input100">
+                                                <span class="label-input100">Phone</span>
+                                                <input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
+                                            </div>
+                            
+                                            <div class="wrap-input100 input100-select bg1">
+                                                <span class="label-input100">Class *</span>
+                                                <div>
+                                                    <select class="js-select2" name="service">
+                                                        <option>Please chooses</option>
+                                                        <option>Science</option>
+                                                        <option>Commerce</option>
+                                                        <option>Arts</option>
+                                                        <option>Engineering</option>
+                                                    </select>
+                                                    <div class="dropDownSelect2"></div>
+                                                </div>
+                                            </div>
+                            
+                                            <div class="w-full js-show-service">
+                                                <div class="wrap-contact100-form-radio">
+                                                    <span class="label-input100">Applying For?</span>
+                            
+                                                    <div class="contact100-form-radio m-t-15">
+                                                        <input class="input-radio100" id="radio1" type="radio" name="type-product" value="physical" checked="checked">
+                                                        <label class="label-radio100" for="radio1">
+                                                            1
+                                                        </label>
+                                                    </div>
+                            
+                                                    <div class="contact100-form-radio">
+                                                        <input class="input-radio100" id="radio2" type="radio" name="type-product" value="digital">
+                                                        <label class="label-radio100" for="radio2">
+                                                            2
+                                                        </label>
+                                                    </div>
+                            
+                                                    <div class="contact100-form-radio">
+                                                        <input class="input-radio100" id="radio3" type="radio" name="type-product" value="service">
+                                                        <label class="label-radio100" for="radio3">
+                                                            3
+                                                        </label>
+                                                    </div>
+                                                </div>
+                            
+                                                <!-- <div class="wrap-contact100-form-range">
+                                                    <span class="label-input100">Budget *</span>
+                            
+                                                    <div class="contact100-form-range-value">
+                                                        $<span id="value-lower">610</span> - $<span id="value-upper">980</span>
+                                                        <input type="text" name="from-value">
+                                                        <input type="text" name="to-value">
+                                                    </div>
+                            
+                                                    <div class="contact100-form-range-bar">
+                                                        <div id="filter-bar"></div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+                                                    <span class="label-input100">Hobbies</span>
+                                                    <textarea class="input100" name="message" placeholder="Type here..."></textarea>
+                                                </div>
+                            
+                                            <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+                                                <span class="label-input100">Skills</span>
+                                                <textarea class="input100" name="message" placeholder="Type here..."></textarea>
+                                            </div>
+                            
+                                            <div class="container-contact100-form-btn">
+                                                <button class="contact100-form-btn">
+                                                    <span>
+                                                        Submit
+                                                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                    </div>
         </div>
+        
     </div>
     
             
@@ -83,13 +206,13 @@
                 'numSegments'     : 8,         // Specify number of segments.
                 'segments'        :             // Define segments including colour and text.
                 [                               // font size and test colour overridden on backrupt segments.
-                   {'fillStyle' : '#f2f2f2', 'text' : '₹499'},
-                   {'fillStyle' : '#fe5757', 'text' : '₹799'},
-                   {'fillStyle' : '#f2f2f2', 'text' : '₹1999'},
-                   {'fillStyle' : '#fe5757', 'text' : '₹999'},
-                   {'fillStyle' : '#f2f2f2', 'text' : '₹499'},
-                   {'fillStyle' : '#fe5757', 'text' : '₹799'},
-                   {'fillStyle' : '#f2f2f2', 'text' : '₹1999'},
+                   {'fillStyle' : '#16a085', 'text' : '₹499'},
+                   {'fillStyle' : '#2980b9', 'text' : '₹799'},
+                   {'fillStyle' : '#34495e', 'text' : '₹1999'},
+                   {'fillStyle' : '#f39c12', 'text' : '₹999'},
+                   {'fillStyle' : '#d35400', 'text' : '₹499'},
+                   {'fillStyle' : '#c0392b', 'text' : '₹799'},
+                   {'fillStyle' : '#34495e', 'text' : '₹1999'},
                    {'fillStyle' : '#fe5757', 'text' : '₹999'},
                 ],
                 'animation' :           // Specify the animation to use.
@@ -221,6 +344,77 @@
             // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
             // -------------------------------------------------------
             
+        </script>
+        <script src="../form/vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+            <script src="../form/vendor/animsition/js/animsition.min.js"></script>
+        <!--===============================================================================================-->
+            <script src="../form/vendor/bootstrap/js/popper.js"></script>
+            <script src="../form/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+            <script src="../form/vendor/select2/select2.min.js"></script>
+            <script>
+                $(".js-select2").each(function(){
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+        
+        
+                    $(".js-select2").each(function(){
+                        $(this).on('select2:close', function (e){
+                            if($(this).val() == "Please chooses") {
+                                $('.js-show-service').slideUp();
+                            }
+                            else {
+                                $('.js-show-service').slideUp();
+                                $('.js-show-service').slideDown();
+                            }
+                        });
+                    });
+                })
+            </script>
+        <!--===============================================================================================-->
+            <script src="../form/vendor/daterangepicker/moment.min.js"></script>
+            <script src="../form/vendor/daterangepicker/daterangepicker.js"></script>
+        <!--===============================================================================================-->
+            <script src="../form/vendor/countdowntime/countdowntime.js"></script>
+        <!--===============================================================================================-->
+            <script src="../form/vendor/noui/nouislider.min.js"></script>
+            <script>
+                var filterBar = document.getElementById('filter-bar');
+        
+                noUiSlider.create(filterBar, {
+                    start: [ 1500, 3900 ],
+                    connect: true,
+                    range: {
+                        'min': 1500,
+                        'max': 7500
+                    }
+                });
+        
+                var skipValues = [
+                document.getElementById('value-lower'),
+                document.getElementById('value-upper')
+                ];
+        
+                filterBar.noUiSlider.on('update', function( values, handle ) {
+                    skipValues[handle].innerHTML = Math.round(values[handle]);
+                    $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+                    $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+                });
+            </script>
+        <!--===============================================================================================-->
+            <script src="js/main.js"></script>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-23581568-13');
         </script>
     </body>
 </html>
