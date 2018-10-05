@@ -30,35 +30,34 @@
         <link rel="stylesheet" href="main.css" type="text/css" />
         <script type="text/javascript" src="../../Winwheel.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     </head>
-    <body style="background-color: grey">
+    <body>
         <div align="center">
-            <table cellpadding="0" cellspacing="0" border="0">
-            <tr>
-                <td>
-                    <div class="power_controls">
-                        <br />
-                        <br />
-                        <span class="power"></span>
-                        <br />
-                        <span id="spin_button"></span>
-                        <br /><br />
-                    </div>
-                </td>
-                <td width="438" height="582" class="the_wheel" onClick="startSpin()" align="center" valign="center">
-                    <canvas id="canvas" width="434" height="434">
+            <div>
+                <img height="100px;" width="auto" src="./technologymakerLogo.png" alt="TM">
+            </div>
+            <span id="spin_button"></span>
+            <div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                <td width="438px" height="582px" class="the_wheel" onClick="startSpin()" align="center" valign="center">
+                    <canvas id="canvas" width="434px" height="434px">
                         <p style="color: white" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
                     </canvas>
                 </td>
-            </tr>
-        </table>
-        <div style=" padding-left: 33%;">
-            <p style="text-align: left"> <strong>Terms and Condition:</strong><br><br> The following amount shall be redeemed to you. <br>
-            After the completion of 3 projects. <br>
-            The amount shall be credited to you with your respective pay for 3 projects. <br><br>
-            All the best.  </p>
-        </div>
-        <div id="myModal" class="modal">
+            </table>
+            </div>
+            <div style=" padding-left: 33%;">
+                <p style="text-align: left"> <strong style="font-size: 20px;">Terms and Condition:</strong><br><br>1. The following amount shall be redeemed to you. <br>
+                2. After the completion of 3 projects. <br>
+                3. The amount shall be credited to you with your respective pay for 3 projects. <br><br></p>
+            </div>
+            <div>
+                <span class="text-uppercase pb-5 font-weight-bold text-danger blink" style="font-size: 30px;">All the best!!</span> 
+            </div>
+                 
+            
+            <div id="myModal" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content">
                   <span class="close">&times;</span>
@@ -78,14 +77,14 @@
                 'numSegments'     : 8,         // Specify number of segments.
                 'segments'        :             // Define segments including colour and text.
                 [                               // font size and test colour overridden on backrupt segments.
-                   {'fillStyle' : '#428bca', 'text' : '₹499'},
-                   {'fillStyle' : '#d9534f', 'text' : '₹799'},
-                   {'fillStyle' : '#428bca', 'text' : '₹1999'},
-                   {'fillStyle' : '#d9534f', 'text' : '₹999'},
-                   {'fillStyle' : '#428bca', 'text' : '₹499'},
-                   {'fillStyle' : '#d9534f', 'text' : '₹799'},
-                   {'fillStyle' : '#428bca', 'text' : '₹1999'},
-                   {'fillStyle' : '#d9534f', 'text' : '₹999'},
+                   {'fillStyle' : '#f2f2f2', 'text' : '₹499'},
+                   {'fillStyle' : '#fe5757', 'text' : '₹799'},
+                   {'fillStyle' : '#f2f2f2', 'text' : '₹1999'},
+                   {'fillStyle' : '#fe5757', 'text' : '₹999'},
+                   {'fillStyle' : '#f2f2f2', 'text' : '₹499'},
+                   {'fillStyle' : '#fe5757', 'text' : '₹799'},
+                   {'fillStyle' : '#f2f2f2', 'text' : '₹1999'},
+                   {'fillStyle' : '#fe5757', 'text' : '₹999'},
                 ],
                 'animation' :           // Specify the animation to use.
                 {
@@ -146,26 +145,26 @@
             // -------------------------------------------------------
             // Function to handle the onClick on the power buttons.
             // -------------------------------------------------------
-            function powerSelected(powerLevel)
-            {
-                // Ensure that power can't be changed while wheel is spinning.
-                if (wheelSpinning == false)
-                {
-                    // Reset all to grey incase this is not the first time the user has selected the power.
+            // function powerSelected(powerLevel)
+            // {
+            //     // Ensure that power can't be changed while wheel is spinning.
+            //     if (wheelSpinning == false)
+            //     {
+            //         // Reset all to grey incase this is not the first time the user has selected the power.
                     
-                    document.getElementById('pw2').className = "";
+            //         document.getElementById('pw2').className = "";
 
-                    // Now light up all cells below-and-including the one selected by changing the class.
+            //         // Now light up all cells below-and-including the one selected by changing the class.
 
-                    document.getElementById('pw2').className = "pw2";
+            //         document.getElementById('pw2').className = "pw2";
 
-                    // Set wheelPower var used when spin button is clicked.
-                    wheelPower = powerLevel;
+            //         // Set wheelPower var used when spin button is clicked.
+            //         wheelPower = powerLevel;
 
-                    // Light up the spin button by changing it's source image and adding a clickable class to it.
-                    document.getElementById('spin_button').className = "clickable";
-                }
-            }
+            //         // Light up the spin button by changing it's source image and adding a clickable class to it.
+            //         document.getElementById('spin_button').className = "clickable";
+            //     }
+            // }
 
             // -------------------------------------------------------
             // Click handler for spin button.

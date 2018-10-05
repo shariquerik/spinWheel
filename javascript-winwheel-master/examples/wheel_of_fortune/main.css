@@ -22,6 +22,12 @@ td.the_wheel
     background-position: center;
     background-repeat: none;
 }
+canvas.the_wheel
+{
+    background-image: url(./wheel_back.png);
+    background-position: center;
+    background-repeat: none;
+}
 
 /* Do some css reset on selected elements */
 h1, p
@@ -80,11 +86,11 @@ td.pw3
     margin-bottom: 5px;
 }
 
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -94,18 +100,18 @@ td.pw3
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
+/* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: auto;
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -113,7 +119,20 @@ td.pw3
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
+
+@-webkit-keyframes blinker {
+    from {opacity: 1.0;}
+    to {opacity: 0.0;}
+  }
+  .blink{
+      text-decoration: blink;
+      -webkit-animation-name: blinker;
+      -webkit-animation-duration: 0.6s;
+      -webkit-animation-iteration-count:infinite;
+      -webkit-animation-timing-function:ease-in-out;
+      -webkit-animation-direction: alternate;
+  }
