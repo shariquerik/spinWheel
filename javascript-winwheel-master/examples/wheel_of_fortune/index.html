@@ -58,12 +58,7 @@
             The amount shall be credited to you with your respective pay for 3 projects. <br><br>
             All the best.  </p>
         </div>
-        
-        
-        
-
-            
-            <div id="myModal" class="modal">
+        <div id="myModal" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content">
                   <span class="close">&times;</span>
@@ -103,15 +98,8 @@
 
             function alertPrize(indicatedSegment)
             {
-                if(indicatedSegment.text == 'LOOSE TURN'){
-                    document.getElementById("d").innerHTML = "Sorry but you loose a turn.";
-                }
-                else if(indicatedSegment.text == 'BANKRUPT'){
-                    document.getElementById("d").innerHTML = "Oh no, you have gone BANKRUPT!";
-                }
-                else{
-                    document.getElementById("d").innerHTML = "Congratulations!! You have Won " + indicatedSegment.text;
-                }
+                document.getElementById("d").innerHTML = "Congratulations!! You have Won " + indicatedSegment.text;
+    
                 
                     
                     var modal = document.getElementById('myModal');
