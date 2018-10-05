@@ -31,18 +31,8 @@
         <script type="text/javascript" src="../../Winwheel.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     </head>
-    <body>
+    <body style="background-color: grey">
         <div align="center">
-            <!-- <h1>Winwheel.js example wheel - wheel of fortune</h1>
-            <p>Here is an example of a code-drawn Wheel of Fortune looking wheel which spins to a stop with the prize won alerted to the user.</p>
-            <br />
-            <p>
-                With some additional coding it could be made so that the prize won is added to a total after each spin rather than
-                just alerting the prize to make a proper wheel of fortune like game.
-            </p>
-            <br />
-            <p>Choose a power setting then press the Spin button. You will be alerted to the prize won when the spinning stops.</p>
-            <br /> -->
             <table cellpadding="0" cellspacing="0" border="0">
             <tr>
                 <td>
@@ -50,24 +40,9 @@
                         <br />
                         <br />
                         <span class="power"></span>
-                        <!-- <table class="power" cellpadding="10" cellspacing="0">
-                            <tr>
-                                <th align="center">Power</th>
-                            </tr>
-                            <tr>
-                                <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
-                            </tr>
-                            <tr>
-                                <td align="center" id="pw2" onClick="powerSelected(2);">Med</td>
-                            </tr>
-                            <tr>
-                                <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
-                            </tr>
-                        </table> -->
                         <br />
                         <span id="spin_button"></span>
                         <br /><br />
-                        <!-- &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset) -->
                     </div>
                 </td>
                 <td width="438" height="582" class="the_wheel" onClick="startSpin()" align="center" valign="center">
@@ -77,6 +52,26 @@
                 </td>
             </tr>
         </table>
+        <div style=" padding-left: 33%;">
+            <p style="text-align: left"> <strong>Terms and Condition:</strong><br><br> The following amount shall be redeemed to you. <br>
+            After the completion of 3 projects. <br>
+            The amount shall be credited to you with your respective pay for 3 projects. <br><br>
+            All the best.  </p>
+        </div>
+        
+        
+        
+
+            
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <span id="d"></span>
+                </div>
+            </div>
+        </div>
+            
         <script>
             // Create new wheel object specifying the parameters at creation time.
             var theWheel = new Winwheel({
@@ -85,33 +80,17 @@
                 'textFontSize'    : 24,         // Set default font size for the segments.
                 'textOrientation' : 'vertical', // Make text vertial so goes down from the outside of wheel.
                 'textAlignment'   : 'outer',    // Align text to outside of wheel.
-                'numSegments'     : 24,         // Specify number of segments.
+                'numSegments'     : 8,         // Specify number of segments.
                 'segments'        :             // Define segments including colour and text.
                 [                               // font size and test colour overridden on backrupt segments.
-                   {'fillStyle' : '#ee1c24', 'text' : '₹300'},
-                   {'fillStyle' : '#3cb878', 'text' : '₹450'},
-                   {'fillStyle' : '#f6989d', 'text' : '₹600'},
-                   {'fillStyle' : '#00aef0', 'text' : '₹750'},
-                   {'fillStyle' : '#f26522', 'text' : '₹500'},
-                   {'fillStyle' : '#000000', 'text' : 'BANKRUPT', 'textFontSize' : 16, 'textFillStyle' : '#ffffff'},
-                   {'fillStyle' : '#e70697', 'text' : '₹3000'},
-                   {'fillStyle' : '#fff200', 'text' : '₹600'},
-                   {'fillStyle' : '#f6989d', 'text' : '₹700'},
-                   {'fillStyle' : '#ee1c24', 'text' : '₹350'},
-                   {'fillStyle' : '#3cb878', 'text' : '₹500'},
-                   {'fillStyle' : '#f26522', 'text' : '₹800'},
-                   {'fillStyle' : '#a186be', 'text' : '₹300'},
-                   {'fillStyle' : '#fff200', 'text' : '₹400'},
-                   {'fillStyle' : '#00aef0', 'text' : '₹650'},
-                   {'fillStyle' : '#ee1c24', 'text' : '₹1000'},
-                   {'fillStyle' : '#f6989d', 'text' : '₹500'},
-                   {'fillStyle' : '#f26522', 'text' : '₹400'},
-                   {'fillStyle' : '#3cb878', 'text' : '₹900'},
-                   {'fillStyle' : '#000000', 'text' : 'BANKRUPT', 'textFontSize' : 16, 'textFillStyle' : '#ffffff'},
-                   {'fillStyle' : '#a186be', 'text' : '₹600'},
-                   {'fillStyle' : '#fff200', 'text' : '₹700'},
-                   {'fillStyle' : '#00aef0', 'text' : '₹800'},
-                   {'fillStyle' : '#ffffff', 'text' : 'LOOSE TURN', 'textFontSize' : 12}
+                   {'fillStyle' : '#428bca', 'text' : '₹499'},
+                   {'fillStyle' : '#d9534f', 'text' : '₹799'},
+                   {'fillStyle' : '#428bca', 'text' : '₹1999'},
+                   {'fillStyle' : '#d9534f', 'text' : '₹999'},
+                   {'fillStyle' : '#428bca', 'text' : '₹499'},
+                   {'fillStyle' : '#d9534f', 'text' : '₹799'},
+                   {'fillStyle' : '#428bca', 'text' : '₹1999'},
+                   {'fillStyle' : '#d9534f', 'text' : '₹999'},
                 ],
                 'animation' :           // Specify the animation to use.
                 {
@@ -124,20 +103,51 @@
 
             function alertPrize(indicatedSegment)
             {
+                if(indicatedSegment.text == 'LOOSE TURN'){
+                    document.getElementById("d").innerHTML = "Sorry but you loose a turn.";
+                }
+                else if(indicatedSegment.text == 'BANKRUPT'){
+                    document.getElementById("d").innerHTML = "Oh no, you have gone BANKRUPT!";
+                }
+                else{
+                    document.getElementById("d").innerHTML = "Congratulations!! You have Won " + indicatedSegment.text;
+                }
+                
+                    
+                    var modal = document.getElementById('myModal');
+                    modal.style.display = "block";
+                    // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                    modal.style.display = "none";
+                    }
+                }
+                
+            
+                
+                
                 // Just alert to the user what happened.
                 // In a real project probably want to do something more interesting than this with the result.
-                if (indicatedSegment.text == 'LOOSE TURN')
-                {
-                    alert('Sorry but you loose a turn.');
-                }
-                else if (indicatedSegment.text == 'BANKRUPT')
-                {
-                    alert('Oh no, you have gone BANKRUPT!');
-                }
-                else
-                {
-                    alert("You have won " + indicatedSegment.text);
-                }
+                // if (indicatedSegment.text == 'LOOSE TURN')
+                // {
+                //     alert('Sorry but you loose a turn.');
+                // }
+                // else if (indicatedSegment.text == 'BANKRUPT')
+                // {
+                //     alert('Oh no, you have gone BANKRUPT!');
+                // }
+                // else
+                // {
+                //     alert("Congratulations!! You have won " + indicatedSegment.text);
+                // }
                 // resetWheel();
             }
 
